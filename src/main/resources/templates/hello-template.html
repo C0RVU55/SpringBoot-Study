@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"> <!-- 타임리프 템플릿 엔진 처리 -->
+<head>
+	<title>Hello</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<p th:text="'hello ' + ${name}">hello! empty</p> <!-- p태그 내용은 서버에서 받는 값이 아니라 그냥 확인용 껍데기 -->
+
+</body>
+</html>
