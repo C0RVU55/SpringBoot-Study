@@ -17,6 +17,7 @@ public class HelloController {
 
 	// *빌드 및 실행 cmd명령어(윈도우) : gradlew.bat build (이러면 build\libs에 jar파일 생성됨)
 
+	// view로 템플릿 엔진 방식으로 렌더링된 html을 보냄
 	@GetMapping("hello-mvc")
 	public String helloMvc(@RequestParam(value = "name", required = false) String name, Model model) {
 		model.addAttribute("name", name);
