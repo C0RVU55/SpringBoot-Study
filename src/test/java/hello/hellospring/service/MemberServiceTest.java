@@ -16,18 +16,23 @@ class MemberServiceTest {
 	// 테스트할 때는 메소드명을 한글로 적어도 됨. 테스트 코드는 빌드에 포함되지 않음.
 	// 테스트는 예외처리가 중요함.
 	
-	// MemberService memberService = new MemberService();
-	MemberService memberService;
+	/*
+	MemberService memberService = new MemberService();
 	MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+	*/
 	// 서비스라서 저장하는 게 없으니까 Repository 불러옴. 
 	// static이긴 하지만 한 번 더 인스턴스화했기 때문에 다른 Repository를 쓰고 있는 상황. 
 	
+	MemberService memberService;
+	MemoryMemberRepository memberRepository;
+	
+	// 테스트 실행하기 전에 repository 선언해서 memberService에 있는 생성자에 넣어서 씀 --> 같은 repository로만 쓰게 됨
 	@BeforeEach
 	public void beforeEach() {
 		memberRepository = new MemoryMemberRepository();
 		memberService = new MemberService(memberRepository);
 	}
-	// 테스트 실행하기 전에 repository 선언해서 memberService에 있는 생성자에 넣어서 씀 --> 같은 repository로만 쓰게 됨
+	
 	
 	@AfterEach
 	public void afterEach() {
