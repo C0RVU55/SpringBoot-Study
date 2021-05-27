@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemoryMemberRepository;
 
+
 class MemberServiceTest {
 
 	// 인텔리제이는 메소드 선택 가능한데 이클립스는 안 돼서 내가 일일이 쳐야 되는듯.

@@ -3,10 +3,13 @@ package hello.hellospring.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 
+@Service
 public class MemberService {
 
 	// 테스트 파일 생성 단축키 --> ctrl+N --> junit 검색 후 test case
@@ -16,6 +19,7 @@ public class MemberService {
 	
 	// 테스트할 때 MemberRepository를 새로 선언하지 않고 같은 repository를 쓰기 위해 생성자 만듦
 	// MemberService 입장에서 직접 new 하지 않고 외부에서 repository를 받음 --> 의존성 주입 (Dependency Injection, DI)
+	// @Autowired --> @Bean 등록했으니까 뺌?
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
