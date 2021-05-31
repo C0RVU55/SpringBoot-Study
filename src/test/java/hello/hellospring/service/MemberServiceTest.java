@@ -34,7 +34,7 @@ class MemberServiceTest {
 		memberService = new MemberService(memberRepository);
 	}
 	
-	
+	// 테스트 실행 후
 	@AfterEach
 	public void afterEach() {
 		memberRepository.clearStore();
