@@ -3,13 +3,15 @@ package hello.hellospring.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 
 @Service
+@Transactional // jpa 연동 --> 데이터 저장 및 조회를 위해 어노테이션 필요
 public class MemberService {
 
 	// 테스트 파일 생성 단축키 --> ctrl+N --> junit 검색 후 test case

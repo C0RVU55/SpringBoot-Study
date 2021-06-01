@@ -3,7 +3,6 @@ package hello.hellospring.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,12 +21,15 @@ class MemberServiceIntegrationTest {
 	
 	// 단위로 나눠서 컨테이너 없이 테스트할 수 있는 게 좋음
 	
+	// 7일차 새로 만든 JdbcTemplateMemberRepository 테스트도 그냥 여기에 하면 됨. 스프링 Bean에서 return 바꿨으니까.
+	
 	// 기존 생성자로 받아도 되지만 테스트는 필드 갖고 해도 됨 --> BeforeEach, AfterEach 지움
 	@Autowired MemberService memberService;
 	@Autowired MemberRepository memberRepository;
 
 	
 	@Test
+	// @Commit --> DB에 반영
 	void 회원가입() {
 		// 테스트 코드 권장 구조
 		// given
